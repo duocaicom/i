@@ -28,7 +28,7 @@ document.addEventListener('touchend', (event) => {
   const diffY = endY - startY;
 
   // 判断滑动方向：从左向右滑动
-  if (Math.abs(diffX) > Math.abs(diffY) && diffX > 50) {
+  if (Math.abs(diffX) > Math.abs(diffY) && diffX > 10) {
     window.location.href = wechatArticleLink; // 跳转到公众号文章
   }
 });
