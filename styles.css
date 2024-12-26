@@ -1,34 +1,18 @@
-/* 通用样式 */
+/* 去除所有不必要的样式，只保留视频播放器自适应 */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f0f0f0;
-  overflow-x: hidden;
-}
-
-.container {
-  text-align: center;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 800px;
-}
-
-h1 {
-  color: #333;
+  background-color: #000; /* 背景为黑色，保持播放器专注 */
+  overflow: hidden; /* 禁止滚动 */
 }
 
 .responsive-video {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
