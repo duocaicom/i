@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swipe to Redirect</title>
+  <title>Responsive Video Demo</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <h1>懂的都懂</h1>
-    <video id="demo-video" width="600" autoplay playsinline>
+    <video id="demo-video" class="responsive-video" autoplay playsinline>
       <source src="https://d.kstore.dev/download/9593/2090eff9bab32d4467aefd0ce0d11084.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="button-container">
+      <button id="play-button" style="display: none;">Play Video</button>
       <button id="back-button">福利</button>
     </div>
   </div>

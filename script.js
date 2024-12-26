@@ -1,16 +1,32 @@
 // 配置公众号文章链接
 const wechatArticleLink = "https://mp.weixin.qq.com/s/vf7OK8qH5i8yFWXogE8zCA";
 
-// 视频播放结束后跳转
+// 获取视频元素
 const video = document.getElementById('demo-video');
+const playButton = document.getElementById('play-button');
+const backButton = document.getElementById('back-button');
+
+// 视频播放结束后跳转
 video.addEventListener('ended', () => {
   window.location.href = wechatArticleLink; // 跳转到指定公众号文章
 });
 
 // 返回按钮点击后跳转
-const backButton = document.getElementById('back-button');
 backButton.addEventListener('click', () => {
   window.location.href = wechatArticleLink; // 跳转到同样的链接
+});
+
+// 自动播放逻辑（可能需要用户交互）
+video.play().catch((error) => {
+  console.log('自动播放失败，显示播放按钮：', error);
+  playButton.style.display = 'inline-block'; // 显示播放按钮
+});
+
+// 手动播放按钮（当自动播放失败时使用）
+playButton.addEventListener('click', () => {
+  video.play().catch((error) => {
+    console.log('手动播放失败：', error);
+  });
 });
 
 // 监听滑动手势
@@ -31,9 +47,8 @@ document.addEventListener('touchend', (event) => {
   const diffX = endX - startX;
   const diffY = endY - startY;
 
-  // 判断滑动方向：左滑或右滑
+  // 判断滑动方向：从左向右滑动
   if (Math.abs(diffX) > Math.abs(diffY) && diffX > 50) {
-    // 从左向右滑动触发跳转
-    window.location.href = wechatArticleLink;
+    window.location.href = wechatArticleLink; // 跳转到公众号文章
   }
 });
